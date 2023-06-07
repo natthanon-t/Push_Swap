@@ -6,9 +6,13 @@
 /*   By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:56:21 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/05/19 16:33:13 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/06/07 17:29:21 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	main(int ac, char **av)
+{
+	
+}

@@ -6,29 +6,29 @@
 #    By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 16:37:31 by ntairatt          #+#    #+#              #
-#    Updated: 2023/05/21 10:32:30 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/06/07 17:30:17 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME	=	push_swap
 
-CC = gcc
+CC	=	cc
 
-CFLAGS = -Wall -Wextra -Werror -I$(DIR_INC)
+CFLAGS	=	-Wall -Wextra -Werror -I$(DIR_INC)
 
-SRCS = push_swap.c main.c \
+SRCS	=	push_swap.c main.c \
 
-DIR_INC = include
-DIR_SRC = src
+DIR_INC	=	include
+DIR_SRC	=	src
 
-AR = ar -rcs
+LIBFT	=	libft/libft.a
 
-RM = rm -rf
+AR	=	ar -rcs
 
-OBJS = $(SRSC:.c=.o)
-#OBJS = $(addprefix $(DIR_SRC)/, $(SRCS:.c=.o))
+RM	=	rm -rf
 
-$(NAME): $(OBJS)
+$(NAME): 
+	$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
 
 .PHONY: all clean fclean re norm
 all: $(NAME)
@@ -36,16 +36,17 @@ all: $(NAME)
 clean:
 		@$(RM) $(OBJS)
 		@echo "object files has removed"
+		@make clean -C libft
 		
 
 fclean: clean
 		@$(RM) $(NAME)
-		@echo "libft has removed"
+		@make fclean -C libft
 
 re: fclean all
 
 norm:
-	@echo "Norminette is Checking......"
-	@echo "-----------------------------------------------"
-	@norminette $(addprefix $(DIR_SRC)/, $(SRCS))
-	@echo "-----------------------------------------------"
+	@make norm -C libft
+	@echo "---------------- PUSH_SWAP ----------------"
+	@norminette include src
+	@echo "------------------------------------------\n"
