@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   bubble.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 16:34:20 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/06/08 12:32:31 by ntairatt         ###   ########.fr       */
+/*   Created: 2023/06/08 11:59:05 by ntairatt          #+#    #+#             */
+/*   Updated: 2023/06/08 14:25:04 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-
-typedef struct s_nbr
+void	set_index(t_nbr *stack)
 {
-	int	*nbr;
-	int	index;
-	int	bit;
-	int	size;
-}				t_nbr;
+	int	i;
+	int	j;
+	int	tmp;
 
-void	error(void);
+	i = 0;
+	j = 0;
+	while (i < stack->size)
+	{
+		while (j < stack->size)
+		{
+			if (stack->nbr[i] > stack->nbr[j])
+			{
+				tmp = stack->nbr[i];
+				stack->nbr[i] = stack->nbr[j];
+				stack->nbr[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+		j = i + 1;
+	}
+}
 
-#endif
+void	add_index(t_nbr *stack)
+{
+	
+}
