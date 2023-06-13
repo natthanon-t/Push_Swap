@@ -6,7 +6,7 @@
 #    By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 16:37:31 by ntairatt          #+#    #+#              #
-#    Updated: 2023/06/08 12:33:57 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/06/13 12:12:46 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,16 @@ NAME	=	push_swap
 
 CC	=	cc
 
-CFLAGS	=	-Wall -Wextra -Werror -I$(DIR_INC)
+CFLAGS	=	-Wall -Wextra -Werror -I$(DIR_INC) -I(LIBFT_DIR)
 
 SRCS	=	push_swap.c \
-				error.c \
-				bubble.c \
+				error.c 
 
 DIR_INC	=	include
 DIR_SRC	=	src
 
 LIBFT	=	libft/libft.a
+LIBFT_DIR	=	libft/include
 
 AR	=	ar -rcs
 
