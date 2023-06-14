@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:34:20 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/06/14 10:20:11 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/06/14 10:28:56 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@
 
 typedef struct s_nbr
 {
-	int	*nbr;
-	int	index;
-	int	bit;
-	int	size;
+	int				value;
+	int				index;
+	struct s_nbr	*next;
 }				t_nbr;
 
 void	error(void);
