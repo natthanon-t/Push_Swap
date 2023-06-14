@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:56:21 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/06/08 12:34:54 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/06/08 15:31:47 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	main(int ac, char **av)
 {
-	t_nbr	stack_a;
-	t_nbr	stack_b;
+	t_nbr	*stack_a;
+	t_nbr	*stack_b;
 
-	
+
 	if (ac < 2)
 		error();
 	

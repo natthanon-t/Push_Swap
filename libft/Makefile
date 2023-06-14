@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+         #
+#    By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/29 12:21:09 by ntairatt          #+#    #+#              #
-#    Updated: 2023/06/07 16:31:03 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/06/06 19:31:55 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 CC = cc
 
-CFLAGS =-Wall -Wextra -Werror -I$(DIR_INC)
+CFLAGS = -Wall -Wextra -Werror -I$(DIR_INC)
 
 SRCS = ft_is/ft_isalpha.c \
 			ft_is/ft_isdigit.c \
