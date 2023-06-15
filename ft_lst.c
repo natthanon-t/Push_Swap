@@ -6,7 +6,7 @@
 /*   By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 12:10:51 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/06/13 16:50:52 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/06/15 17:12:40 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,21 +52,14 @@ void	ft_add_back(t_nbr **stack, t_nbr *new)
 	}
 }
 
-void	ft_delone(t_nbr *lst)
-{
-	if (lst == NULL)
-		return ;
-	free(lst);
-}
-
 void	ft_clean(t_nbr **lst)
 {
-	t_nbr	*tmp_next;
+	t_nbr	*tmp;
 
-	while (*lst != NULL)
+	while (*lst)
 	{
-		tmp_next = (*lst)->next;
-		free(lst);
-		*lst = tmp_next;
+		tmp = (*lst)->next;
+		free(*lst);
+		*lst = tmp;
 	}
 }
