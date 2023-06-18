@@ -1,38 +1,33 @@
 #include "push_swap.h"
 
-//void	ft_add_back(t_nbr **stack, t_nbr *new)
+//int main()
 //{
-//	if (new == NULL)
-//		return ;
-//	if (*stack == NULL)
-//		*stack = new;
-//	else
+//	t_nbr	**stack_a;
+//	t_nbr	*v1 = ft_newnode(10);
+//	t_nbr	*v2 = ft_newnode(20);
+//	t_nbr	*v3 = ft_newnode(30);	
+
+//	stack_a = (t_nbr **)malloc(sizeof(t_nbr *));
+//	*stack_a = NULL;
+//	ft_add_back(stack_a, v1);	
+//	ft_add_back(stack_a, v2);	
+//	ft_add_back(stack_a, v3);
+
+//	t_nbr	*tmp = *stack_a;
+//	while (tmp)
 //	{
-//		while ((*stack)->next)
-//			*stack = (*stack)->next;
-//		(*stack)->next = new;
+//		printf("value = %d\n", tmp->value);
+//		tmp = tmp->next;
 //	}
+//	ft_clean(stack_a);
 //}
 
 int main()
 {
-	t_nbr	**stack_a;
-	t_nbr	*v1 = ft_newnode(10);
-	t_nbr	*v2 = ft_newnode(20);	
+	char **test;
+	int i =0;
 
-	printf("size of stacka = %lu\n", sizeof(stack_a));
-	printf("size of v1 = %lu\n", sizeof(v1));
-	
-	*stack_a = NULL;
-	ft_add_back(stack_a, v1);	
-	ft_add_back(stack_a, v2);	
-	//ft_add_back(stack_a, v2);
-
-	t_nbr	**tmp_a = stack_a;
-	while (*stack_a)
-	{
-		printf("value = %d\n", (*stack_a)->value);
-		(*stack_a) = (*stack_a)->next;
-	}
-	ft_clean(stack_a);
+	test = ft_split("	 a		q", ' ');
+	while (test[i])
+		printf("test = %s\n", test[i++]);
 }
