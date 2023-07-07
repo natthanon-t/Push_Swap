@@ -3,53 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   op.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 13:34:04 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/06/15 17:04:30 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/07 14:43:45 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(t_list **v1)
+void	sa(t_nbr **stack_a)
 {
-	t_list	*head;
-	t_list	*next_node;
+	t_nbr	*current;
+	t_nbr	*tmp_next;
 
-	head = *v1;
-	next_node = (*v1)->next;
-	(*v1)->next = next_node->next;
-	next_node->next = head;
-	head = next_node;
-}
-
-void	sa(t_nbr **stack)
-{
-	ft_swap(stack);
+	current = *stack_a;
+	tmp_next = current->next;
+	current->next = tmp_next->next;
+	tmp_next->next = current;
+	*stack_a = tmp_next;
 	ft_printf("sa\n");
-}
-
-void	pb(t_nbr **stack_a, t_nbr **stack_b)
-{
-	t_nbr	*head_a;
-
-	head_a = *stack_a;
-	*stack_a = (*stack_a)->next;
-	head_a->next = NULL;
-	ft_add_back(stack_b, head_a);
-	ft_printf("pb\n");
 }
 
 void	pa(t_nbr **stack_a, t_nbr **stack_b)
 {
-	t_nbr	*head_b;
+	t_nbr	*tmp;
 
-	head_b = *stack_b;
+	tmp = *stack_b;
 	*stack_b = (*stack_b)->next;
-	head_b->next = NULL;
-	ft_add_back(stack_a, head_b);
+	ft_add_front(stack_a, tmp);
 	ft_printf("pa\n");
+}
+
+void	pb(t_nbr **stack_a, t_nbr **stack_b)
+{
+	t_nbr	*tmp;
+
+	tmp = *stack_a;
+	*stack_a = (*stack_a)->next;
+	ft_add_front(stack_b, tmp);
+	ft_printf("pb\n");
 }
 
 void	ra(t_nbr **stack_a)
@@ -58,7 +51,23 @@ void	ra(t_nbr **stack_a)
 
 	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;
-	while((*stack_a)->next)
-		*stack_a = (*stack_a)->next;
-	(*stack_a)->next = tmp;
+	tmp->next = NULL;
+	ft_add_back(stack_a, tmp);
+	ft_printf("ra\n");
+}
+
+void	rra(t_nbr **stack_a)
+{
+	t_nbr	*tmp;
+	t_nbr	*current;
+
+	tmp = *stack_a;
+	current = *stack_a;
+	while (tmp->next)
+		tmp = tmp->next;
+	while (current->next != tmp)
+		current = current->next;
+	current->next = NULL;
+	ft_add_front(stack_a, tmp);
+	ft_printf("rra\n");
 }

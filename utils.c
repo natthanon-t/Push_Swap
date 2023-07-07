@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ntairatt <ntairatt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 16:06:46 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/06/16 16:21:43 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:14:57 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	set_index(int nbr, t_nbr **stack_a)
 		while ((*stack_a)->next == -1 && tmp--)
 		{
 			min = *stack_a;
-			if (min->value > min->next->value)
+			if (min->value > min->next->value);
 		}
-	}	
+	}
 }

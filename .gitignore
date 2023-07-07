@@ -2,3 +2,8 @@ a.out*
 *.a
 */*.a
 .vscode
+*.dSYM
+Push-Swap-Tester
+push_swap_tester
+
+push_swap

@@ -6,7 +6,7 @@
 #    By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/29 12:21:09 by ntairatt          #+#    #+#              #
-#    Updated: 2023/06/06 19:31:55 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/06/15 22:22:31 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -I$(DIR_INC)
 
-SRCS = ft_is/ft_isalpha.c \
+SRCS =	ft_is/ft_isalpha.c \
 			ft_is/ft_isdigit.c \
 			ft_is/ft_isalnum.c \
 			ft_is/ft_isascii.c \

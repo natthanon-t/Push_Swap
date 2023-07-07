@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 12:23:11 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/07 17:04:34 by ntairatt         ###   ########.fr       */
+/*   Created: 2023/06/18 16:14:59 by ntairatt          #+#    #+#             */
+/*   Updated: 2023/06/26 20:31:15 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
-void	error(void)
+void	ft_free_2(char **str)
 {
-	ft_putstr_fd("Error\n", STDERR_FILENO);
-	exit(1);
+	int	i;
+
+	i = 0;
+	while (str[i])
+		free(str[i++]);
+	free(str);
 }
