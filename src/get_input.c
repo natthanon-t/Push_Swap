@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 15:29:31 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/08 23:11:37 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/08 23:24:04 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ void	add_to_stack(t_nbr **stack_a, t_nbr **stack_b, char **tmp, int nbr)
 	while (check_dup)
 	{
 		if (node->value == check_dup->value)
+		{
+			free(node);
 			ft_cleanstack(stack_a, stack_b, tmp, 1);
+		}
 		check_dup = check_dup->next;
 	}
 	ft_add_back(stack_a, node);
