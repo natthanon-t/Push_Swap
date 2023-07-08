@@ -21,7 +21,7 @@ void	format_x(unsigned int nbr, int *len, char c)
 	}
 	else
 	{
-		if (nbr >= 0 && nbr <= 9)
+		if (nbr <= 9)
 			format_c(nbr + '0', len);
 		else if (nbr >= 10 && nbr <= 15 && c == 'x')
 			format_c((nbr - 10) + 'a', len);
