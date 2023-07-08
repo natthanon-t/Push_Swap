@@ -6,13 +6,13 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 15:29:31 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/08 22:41:30 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/08 23:11:37 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	add_to_stack(t_nbr **stack_a, t_nbr **stack_b, int nbr)
+void	add_to_stack(t_nbr **stack_a, t_nbr **stack_b, char **tmp, int nbr)
 {
 	t_nbr	*node;
 	t_nbr	*check_dup;
@@ -28,7 +28,7 @@ void	add_to_stack(t_nbr **stack_a, t_nbr **stack_b, int nbr)
 	while (check_dup)
 	{
 		if (node->value == check_dup->value)
-			error(stack_a, stack_b);
+			ft_cleanstack(stack_a, stack_b, tmp, 1);
 		check_dup = check_dup->next;
 	}
 	ft_add_back(stack_a, node);
@@ -92,7 +92,7 @@ void	split_input(t_nbr **stack_a, t_nbr **stack_b, char **av)
 			nbr = ft_atoi_sp(tmp, stack_a, stack_b, j);
 			if (nbr > 2147483647 || nbr < -2147483648)
 				ft_cleanstack(stack_a, stack_b, tmp, 1);
-			add_to_stack(stack_a, stack_b, nbr);
+			add_to_stack(stack_a, stack_b, tmp, nbr);
 			j++;
 		}
 		i++;
