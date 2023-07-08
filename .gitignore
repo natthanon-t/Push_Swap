@@ -3,7 +3,6 @@ a.out*
 */*.a
 .vscode
 *.dSYM
-Push-Swap-Tester
-push_swap_tester
-
+easy_tester
+hard_tester
 push_swap

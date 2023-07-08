@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 12:10:51 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/07 14:30:30 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/08 15:20:30 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_nbr	*ft_newnode(int nbr)
 	if (!new)
 		return (NULL);
 	new->value = nbr;
-	new->index = -1;
+	new->index = 0;
 	new->next = NULL;
 	return (new);
 }

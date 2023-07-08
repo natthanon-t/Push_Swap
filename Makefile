@@ -6,28 +6,19 @@
 #    By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 16:37:31 by ntairatt          #+#    #+#              #
-#    Updated: 2023/06/30 14:06:36 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/07/08 22:46:56 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 
-CC	=	cc -g
+CC	=	cc
 
 CFLAGS	=	-Wall -Wextra -Werror -I$(DIR_INC) -I$(LIBFT_DIR)
 
 SRCS	=	push_swap.c \
 				ft_free.c \
-				error.c \
-				get_input.c \
-				ft_lst.c \
-				op.c \
-				simple_sort.c \
-				radix_sort.c
-
-SRCS_T	=	test.c \
-				ft_free.c \
-				error.c \
+				utils.c \
 				get_input.c \
 				ft_lst.c \
 				op.c \
@@ -45,28 +36,27 @@ AR	=	ar -rcs
 RM	=	rm -rf
 
 $(NAME):
-	@make bonus -C libft
-	@$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
+	@make -C libft
+	@$(CC) $(CFLAGS) $(addprefix $(DIR_SRC)/, $(SRCS)) $(LIBFT) -o $(NAME)
 
 .PHONY: all clean fclean re norm
 all: $(NAME)
 
 clean:
-		@$(RM) $(OBJS)
-		@echo "object files has removed"
+		@$(RM) $(NAME)
+		@echo "Push_Swap has Removed"
 		@make clean -C libft
 
 
-fclean: clean
+fclean:
 		@$(RM) $(NAME)
+		@echo "Push_Swap has Removed"
 		@make fclean -C libft
 
 re: fclean all
 
-test:
-	@$(CC) $(CFLAGS) $(SRCS_T) $(LIBFT) -o $(NAME)
 norm:
 	@make norm -C libft
 	@echo "---------------- PUSH_SWAP ----------------"
-	@norminette $(SRCS)
+	@norminette $(DIR_INC) $(DIR_SRC)
 	@echo "------------------------------------------\n"
