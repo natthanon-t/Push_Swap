@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:14:59 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/08 23:22:52 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/09 21:25:19 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@ void	ft_free_2(char **str)
 	while (str[i])
 		free(str[i++]);
 	free(str);
+}
+
+void	error(t_nbr **stack_a, t_nbr **stack_b)
+{
+	ft_clean(stack_a);
+	ft_clean(stack_b);
+	ft_putstr_fd("Error\n", STDERR_FILENO);
+	exit(255);
 }
 
 void	ft_cleanstack(t_nbr **stack_a, t_nbr **stack_b, char **nptr, int op)

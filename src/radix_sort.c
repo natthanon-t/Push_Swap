@@ -6,13 +6,13 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 16:37:59 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/08 17:55:33 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/09 20:45:35 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_maxbitlen(t_nbr	**stack_a)
+int	ft_maxbitlen(t_nbr **stack_a)
 {
 	t_nbr	*runner;
 	t_nbr	*max;

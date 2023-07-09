@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:56:21 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/08 22:30:38 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/09 21:32:30 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 	t_nbr	**stack_b;
 
 	if (ac < 2)
-		exit(EXIT_SUCCESS);
+		exit (EXIT_SUCCESS);
 	stack_a = (t_nbr **)malloc(sizeof(t_nbr *));
 	if (!stack_a)
 		exit(EXIT_SUCCESS);

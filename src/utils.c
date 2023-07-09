@@ -6,19 +6,11 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 12:23:11 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/08 22:38:21 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/09 20:47:50 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	error(t_nbr **stack_a, t_nbr **stack_b)
-{
-	ft_clean(stack_a);
-	ft_clean(stack_b);
-	ft_putstr_fd("Error\n", STDERR_FILENO);
-	exit(255);
-}
 
 t_nbr	*min_node(t_nbr **stack_a)
 {
@@ -50,6 +42,22 @@ void	sort_index(t_nbr **stack_a)
 		tmp = min_node(stack_a);
 		tmp->index = i++;
 	}
+}
+
+int	min_nbr(t_nbr **stack_a)
+{
+	t_nbr	*min;
+	t_nbr	*current;
+
+	min = *stack_a;
+	current = *stack_a;
+	while (current->next)
+	{
+		if (min->index > current->next->index)
+			min = current->next;
+		current = current->next;
+	}
+	return (min->index);
 }
 
 int	index_min(t_nbr **stack_a, int n)

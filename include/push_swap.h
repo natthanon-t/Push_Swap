@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:34:20 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/08 23:11:19 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/09 20:45:48 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	sort_index(t_nbr **stack_a);
 /* Simple sort */
 int		min_nbr(t_nbr **stack_a);
 int		index_min(t_nbr **stack_a, int n);
-void	to_top(t_nbr **stack_a, t_nbr **stack_b, int option);
 void	simple_sort(int nbr, t_nbr **stack_a, t_nbr **stack_b);
 void	case_three(t_nbr **stack_a);
 void	case_four(t_nbr **stack_a, t_nbr **stack_b);

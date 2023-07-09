@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 15:54:58 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/08 22:31:34 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/09 21:17:22 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	simple_sort(int nbr, t_nbr **stack_a, t_nbr **stack_b)
 {
 	if (nbr == 1)
-		exit(EXIT_SUCCESS);
+		return ;
 	else if (nbr == 2)
 	{
 		if ((*stack_a)->index > (*stack_a)->next->index)
@@ -55,28 +55,6 @@ void	case_three(t_nbr **stack_a)
 	else if ((*stack_a)->next->next->value < (*stack_a)->value
 		&& (*stack_a)->next->next->value < (*stack_a)->next->value)
 		rra(stack_a);
-}
-
-void	to_top(t_nbr **stack_a, t_nbr **stack_b, int option)
-{
-	if (option == 1)
-		pb(stack_a, stack_b);
-	else if (option == 2)
-	{
-		sa(stack_a);
-		pb(stack_a, stack_b);
-	}
-	else if (option == 3)
-	{
-		ra(stack_a);
-		sa(stack_a);
-		pb(stack_a, stack_b);
-	}
-	else
-	{
-		rra(stack_a);
-		pb(stack_a, stack_b);
-	}
 }
 
 void	case_four(t_nbr **stack_a, t_nbr **stack_b)

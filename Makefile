@@ -6,7 +6,7 @@
 #    By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 16:37:31 by ntairatt          #+#    #+#              #
-#    Updated: 2023/07/08 22:46:56 by ntairatt         ###   ########.fr        #
+#    Updated: 2023/07/09 21:00:59 by ntairatt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,6 @@ DIR_SRC	=	src
 
 LIBFT	=	libft/libft.a
 LIBFT_DIR	=	libft/include
-
-AR	=	ar -rcs
 
 RM	=	rm -rf
 

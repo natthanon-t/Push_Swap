@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 15:29:31 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/08 23:24:04 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/09 20:46:55 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,20 +101,4 @@ void	split_input(t_nbr **stack_a, t_nbr **stack_b, char **av)
 		i++;
 		ft_free_2(tmp);
 	}
-}
-
-int	min_nbr(t_nbr **stack_a)
-{
-	t_nbr	*min;
-	t_nbr	*current;
-
-	min = *stack_a;
-	current = *stack_a;
-	while (current->next)
-	{
-		if (min->index > current->next->index)
-			min = current->next;
-		current = current->next;
-	}
-	return (min->index);
 }
