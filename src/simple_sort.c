@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 15:54:58 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/09 21:17:22 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/12 23:19:57 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ void	case_five(t_nbr **stack_a, t_nbr **stack_b)
 	}
 	else if (n == 5)
 		rra(stack_a);
+	if (!check_sort(stack_a))
+		return ;
 	pb(stack_a, stack_b);
 	case_four(stack_a, stack_b);
 	pa(stack_a, stack_b);
