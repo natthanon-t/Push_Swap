@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 12:23:11 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/09 20:47:50 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/19 12:16:07 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,25 @@ t_nbr	*min_node(t_nbr **stack_a)
 void	sort_index(t_nbr **stack_a)
 {
 	t_nbr	*tmp;
+	t_nbr	*check_dup;
 	int		size;
 	int		i;
 
 	size = ft_lstlen(stack_a);
 	i = 1;
+	check_dup = (*stack_a);
 	while (size--)
 	{
 		tmp = min_node(stack_a);
-		tmp->index = i++;
+		tmp->index = i;
+		if (i > 1 && check_dup->value == tmp->value)
+		{
+			ft_clean(stack_a);
+			ft_putendl_fd("Error", STDERR_FILENO);
+			exit(255);
+		}
+		check_dup = tmp;
+		i++;
 	}
 }
 

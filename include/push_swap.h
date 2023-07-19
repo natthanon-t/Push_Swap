@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:34:20 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/09 20:45:48 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/19 12:21:06 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_add_back(t_nbr **stack, t_nbr *new);
 int		ft_lstlen(t_nbr **lst);
 void	ft_clean(t_nbr **lst);
 void	split_input(t_nbr **stack_a, t_nbr **stack_b, char **av);
-void	add_to_stack(t_nbr **stack_a, t_nbr **stack_b, char **tmp, int nbr);
+void	add_to_stack(t_nbr **stack_a, int nbr);
 void	ft_free_2(char **str);
 void	ft_cleanstack(t_nbr **stack_a, t_nbr **stack_b, char **nptr, int op);
 void	radix_sort(t_nbr **stack_a, t_nbr **stack_b);

@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 17:16:45 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/02/19 11:00:11 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/07/19 11:56:28 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,6 @@ char	**ft_split(char const *s, char c)
 			i++;
 		}
 	}
-	str_sp[len] = 0;
+	str_sp[i] = 0;
 	return (str_sp);
 }
