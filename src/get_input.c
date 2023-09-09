@@ -50,7 +50,7 @@ long	ft_atoi_sp(char **nptr, t_nbr **stack_a, t_nbr **stack_b, int i)
 		if (nptr[i][j] == '-')
 			sign = -1;
 		j++;
-		if (nptr[i][j] < '1' || nptr[i][j] > '9')
+		if (nptr[i][j] < '0' || nptr[i][j] > '9')
 			ft_cleanstack(stack_a, stack_b, nptr, 1);
 	}
 	while (nptr[i][j])
