@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:56:21 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/19 12:03:01 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/11/10 22:51:28 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 		exit(EXIT_SUCCESS);
 	stack_a = NULL;
 	stack_b = NULL;
-	split_input(&stack_a, &stack_b, av);
+	split_input(&stack_a, av);
 	if (!stack_a)
 	{
 		ft_putstr_fd("Error\n", STDERR_FILENO);
@@ -39,6 +39,6 @@ int	main(int ac, char **av)
 	}
 	sort_index(&stack_a);
 	push_swap(&stack_a, &stack_b);
-	ft_cleanstack(&stack_a, &stack_b, NULL, 0);
+	ft_clean(&stack_a);
 	return (EXIT_SUCCESS);
 }

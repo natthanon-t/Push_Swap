@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:14:59 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/09 21:25:19 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:14:56 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free_2(char **str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -22,21 +22,31 @@ void	ft_free_2(char **str)
 	free(str);
 }
 
-void	error(t_nbr **stack_a, t_nbr **stack_b)
+void	error(t_nbr **stack)
 {
-	ft_clean(stack_a);
-	ft_clean(stack_b);
+	ft_clean(stack);
 	ft_putstr_fd("Error\n", STDERR_FILENO);
 	exit(255);
 }
 
-void	ft_cleanstack(t_nbr **stack_a, t_nbr **stack_b, char **nptr, int op)
+void	ft_cleanstack(t_nbr **stack, char **nptr)
 {
-	if (op)
+	if (nptr)
 	{
 		ft_free_2(nptr);
-		error(stack_a, stack_b);
+		error(stack);
 	}
-	ft_clean(stack_a);
-	ft_clean(stack_b);
+	ft_clean(stack);
+}
+
+void	ft_clean(t_nbr **lst)
+{
+	t_nbr	*tmp;
+
+	while (*lst)
+	{
+		tmp = *lst;
+		*lst = (*lst)->next;
+		free(tmp);
+	}
 }

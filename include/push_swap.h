@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:34:20 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/19 12:21:06 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:16:12 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,23 @@ typedef struct s_nbr
 	struct s_nbr	*next;
 }				t_nbr;
 
-void	error(t_nbr **stack_a, t_nbr **stack_b);
+/* ft_lst */
 t_nbr	*ft_newnode(int nbr);
 void	ft_add_front(t_nbr **stack, t_nbr *new);
 void	ft_add_back(t_nbr **stack, t_nbr *new);
 int		ft_lstlen(t_nbr **lst);
-void	ft_clean(t_nbr **lst);
-void	split_input(t_nbr **stack_a, t_nbr **stack_b, char **av);
+
+/* get_input */
+void	split_input(t_nbr **stack_a, char **av);
 void	add_to_stack(t_nbr **stack_a, int nbr);
+
+/* ft_free */
+void	ft_clean(t_nbr **lst);
 void	ft_free_2(char **str);
-void	ft_cleanstack(t_nbr **stack_a, t_nbr **stack_b, char **nptr, int op);
+void	ft_cleanstack(t_nbr **stack, char **nptr);
+void	error(t_nbr **stack);
+
+/* Push Swap */
 void	radix_sort(t_nbr **stack_a, t_nbr **stack_b);
 int		check_sort(t_nbr **stack_a);
 void	sort_index(t_nbr **stack_a);

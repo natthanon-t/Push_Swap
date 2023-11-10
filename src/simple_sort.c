@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 15:54:58 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/19 11:48:45 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:09:37 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ void	simple_sort(int nbr, t_nbr **stack_a, t_nbr **stack_b)
 			sa(stack_a);
 	}
 	else if (nbr == 3)
-	{
-		(void) stack_b;
 		case_three(stack_a);
-	}
 	else if (nbr == 4)
 		case_four(stack_a, stack_b);
 	else if (nbr == 5)

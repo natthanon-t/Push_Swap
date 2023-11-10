@@ -6,7 +6,7 @@
 /*   By: ntairatt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 12:10:51 by ntairatt          #+#    #+#             */
-/*   Updated: 2023/07/14 15:19:02 by ntairatt         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:14:50 by ntairatt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,4 @@ int	ft_lstlen(t_nbr **lst)
 		count++;
 	}
 	return (count);
-}
-
-void	ft_clean(t_nbr **lst)
-{
-	t_nbr	*tmp;
-
-	while (*lst)
-	{
-		tmp = *lst;
-		*lst = (*lst)->next;
-		free(tmp);
-	}
 }
